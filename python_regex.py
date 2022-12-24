@@ -1,0 +1,6 @@
+import re
+
+test_string = """'INTRO / INTER \r\n|Fm|Cm|Fm|Cm|Fm|Cm|Eb|Cm|\r\n|Fm|Eb|Fm|Eb|Fm| —|Cm| —|\r\n|Cm|Eb|Cm|Fm|\r\n\r\nCHORUS\r\nFm       C#    Fm\t\t\r\nඇය යන්න ගියා මැකිලා \r\nEb          Fm       Eb\r\nවන සිරසක තුරු සෙවනැලි අතරේ \r\nFm         Eb\t\t\t\t    \r\nගී ගයමින් හිඳ මා තුරුලේ  \r\nEb        Fm\r\nඇය යන්න ගියා මැකිලා\r\nFm      Eb      Fm\r\nඇය යන්න ගියා මැකිලා  \r\nFm \t\t\t\t\t                 \r\nපිණි කඳුලක් මල් පෙති අග තවරා \r\nEb\t         Fm\r\nමිහිදුම් සළුවෙන් මුහුණ වසා\r\n\r\nVERSE 1 \r\nFm    C#    Fm       Eb                     \r\nනිල්ල නිලන නිල් කඳු වැටි අතරේ \r\nEb         Fm     Eb\r\nසඳ එළියේ මං පෙත පාදා\r\nFm    Eb    Fm     Eb  \t        \r\nරහසක් සඟවා ගොළු වූ හදකින් \r\nEb  Eb7     Fm \r\nයන්න ගියා මැකිලා\r\n\r\nVERSE 2 \r\nFm      \t                                                  \r\nයළි කවදාවත් හමු නොවෙනා බව \r\nEb\r\nමද පවනක් හිස අතගා කීවද\r\nFm   Bb    Fm      Bb  \t   \r\nඅදහා ගන්නට නොහැකිය කිසි දින \r\nCm\t      Eb7   Fm \r\nඇය යළි නොඑතැයි ගිම්හානෙට පෙර\r\n\r\n'"""
+updated_string = re.sub(r'[a-zA-Z]|\d|#|—|\/|\'|\|', '', test_string)
+updated_string = re.sub(r'\s+', ' ', updated_string).strip()
+print(updated_string)
