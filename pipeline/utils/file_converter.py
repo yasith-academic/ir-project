@@ -35,14 +35,8 @@ class FileConverter:
     def csv_to_index(CSV_FILE_PATH, INDEX_OUTPUT_PATH):
         # generate data file for elastic search index
         df = pd.read_csv(CSV_FILE_PATH)
-        json_file = json.loads(df.to_json(orient="records", force_ascii=False))
-        
-        output = ""
-        for entry in json_file:
-            output += json.dumps({"index": {"_index": "songs"}}) + "\n" + json.dumps(entry, ensure_ascii=False) + "\n"
-        
-        output = output.strip()
+        json_file = df.to_json(orient="records", force_ascii=False)
 
         # save to json
         with open(INDEX_OUTPUT_PATH, "w") as f:
-            f.write(output)
+            f.write(json_file)
