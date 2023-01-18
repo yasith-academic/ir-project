@@ -14,18 +14,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-app.get("/search", async (req, res) => {
-  const {
-    title,
-    artist,
-    genre,
-    lyricist,
-    music,
-    key,
-    beat,
-    lyrics,
-    metaphore,
-  } = req.body;
+app.post("/search", async (req, res) => {
+  const { title, artist, genre, lyricist, music, key, beat, lyrics, metaphor } =
+    req.body;
 
   let conditions = [];
   if (title) {
@@ -45,12 +36,13 @@ app.get("/search", async (req, res) => {
     conditions.push({ match: { beat: beat } });
   } else if (lyrics) {
     conditions.push({ match: { "lyrics.sinhala": lyrics } });
-  } else if (metaphore) {
-    conditions.push({ match: { "metaphore.sinhala": metaphore } });
+  } else if (metaphor) {
+    conditions.push({ match: { "metaphor.sinhala": metaphor } });
   }
 
   const result = await client.search({
     index: "songs",
+    size: 100,
     query: {
       bool: {
         must: conditions,
@@ -68,13 +60,13 @@ app.get("/search", async (req, res) => {
     key: hit._source.key,
     beat: hit._source.beat,
     lyrics: hit._source.lyrics,
-    metaphore: hit._source.metaphore,
+    metaphor: hit._source.metaphor,
     metaphor_interpretation: hit._source.metaphor_interpretation,
     metaphor_source_domain: hit._source.metaphor_source_domain,
     metaphor_target_domain: hit._source.metaphor_target_domain,
   }));
 
-  console.log("GET /search");
+  console.log("POST /search");
   res.json(output);
 });
 
