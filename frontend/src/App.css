@@ -1,0 +1,89 @@
+.body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  margin: 16px 0 !important;
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: 600 !important;
+}
+
+.text {
+  text-align: center;
+}
+
+.button {
+  height: 100%;
+}
+
+/* search results */
+.search-container {
+  max-height: 80vh;
+  margin-top: 16px;
+  padding: 8px 16px;
+  border: 2px solid #ccc;
+  border-radius: 16px;
+  overflow-y: auto;
+}
+
+.search-result {
+  padding: 8px 16px;
+  border-radius: 16px;
+}
+
+.search-result:hover {
+  background-color: #f2f0e9;
+}
+
+.search-result-title {
+  color: red;
+  cursor: pointer;
+  font-weight: 600 !important;
+}
+
+.search-result-additional-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.search-result-additional {
+  margin-right: 32px !important;
+}
+
+/* song */
+.song-container {
+  max-height: 80vh;
+  margin-top: 16px !important;
+  padding: 8px 16px;
+}
+
+.song-title {
+  margin-bottom: 16px !important;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.song-lyrics {
+  white-space: pre-line;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.song-fields {
+  margin-top: 16px !important;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.song-fields:nth-child(1) {
+  margin-top: 72px !important;
+}
