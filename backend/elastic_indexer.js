@@ -82,8 +82,12 @@ async function run() {
             },
             artist: {
               type: "text",
-              analyzer: "case_insensitive_analyzer",
+              analyzer: "sinhala_language_analyzer",
               fields: {
+                sinhala: {
+                  type: "text",
+                  analyzer: "sinhala_language_analyzer",
+                },
                 case_insensitive: {
                   type: "text",
                   analyzer: "case_insensitive_analyzer",
@@ -95,8 +99,12 @@ async function run() {
             },
             lyricist: {
               type: "text",
-              analyzer: "case_insensitive_analyzer",
+              analyzer: "sinhala_language_analyzer",
               fields: {
+                sinhala: {
+                  type: "text",
+                  analyzer: "sinhala_language_analyzer",
+                },
                 case_insensitive: {
                   type: "text",
                   analyzer: "case_insensitive_analyzer",
