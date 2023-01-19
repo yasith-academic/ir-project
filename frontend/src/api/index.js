@@ -1,6 +1,6 @@
 const songs = {
   POST: (data) =>
-    fetch("http://localhost:3000/search", {
+    fetch("http://localhost:3001/search", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
