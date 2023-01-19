@@ -72,6 +72,7 @@ Backend of the System was created using `Node.js` and `express` package. `React`
 4. Execute the following commands from the project root to create mappings and indexes for the IR system.
    ```bash
     cd backend
+    npm install
     node elastic_indexer.js
    ```
 
@@ -85,5 +86,6 @@ Backend of the System was created using `Node.js` and `express` package. `React`
 2. Frontend can be started using the following commands from the project root.
    ```bash
     cd frontend
+    npm install
     npm start
    ```
